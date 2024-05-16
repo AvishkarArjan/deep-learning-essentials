@@ -28,8 +28,8 @@ transform = transforms.Compose([
     transforms.ToTensor(),           # Convert images to tensors
 ])
 
-# dataset = datasets.Caltech256(DATA_ROOT, transform=transform, download=True)
-dataset = datasets.Caltech101(DATA_ROOT, transform=transform, download=True)
+dataset = datasets.Caltech256(DATA_ROOT, transform=transform, download=True)
+# dataset = datasets.Caltech101(DATA_ROOT, transform=transform, download=True)
 print("Dataset size : ",len(dataset))
 indices = list(range(len(dataset)))
 

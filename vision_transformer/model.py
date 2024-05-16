@@ -1,3 +1,10 @@
+"""MODEL
+
+checkout : https://github.com/nerminnuraydogan/vision-transformer/blob/main/vision-transformer.ipynb
+
+Pytorch Paper replication : https://www.learnpytorch.io/08_pytorch_paper_replicating/"""
+
+
 import torch
 import torch.nn as nn
 
@@ -50,6 +57,7 @@ class Attention(nn.Module):
       q@k_t
     )*self.scale
     attn = dp.softmax(dim=-1)
+    attn = self.attn_drop(attn)
     weighted_avg = attn@v
     weighted_avg = weighted_avg.transpose(1,2)
     weighted_avg = weighted_avg.flatten(2)
@@ -110,11 +118,11 @@ class VisionTransformer(nn.Module):
     in_channels=3,
     n_classes=1000,
     embed_dim=768,
-    depth=4,
+    depth=12,
     n_heads=12,
     mlp_ratio=4,
     qkv_bias=True,
-    p=0,
+    p=0.,
     attn_p=0.,
   ):
     super().__init__()
@@ -167,32 +175,9 @@ class VisionTransformer(nn.Module):
     return x
 
 
-if __name__ == "__main__":
-  pass
-  """
-  Download ImageNet and train
-  ImageNet Dataset Download : https://image-net.org/challenges/LSVRC/2012/2012-downloads.php
-  ImageNet Dataset Download : https://image-net.org/download-images
-  PyTorch ImageNet usage : https://pytorch.org/vision/main/generated/torchvision.datasets.ImageNet.html
-  create config.py"""
-  
-#   model = VisionTransformer()
-#   model = model.to(device)
-  
-  """
-  self,
-    img_size=384,
-    patch_size=16,
-    in_channels=3,
-    n_classes=1000,
-    embed_dim=768,
-    depth=12,
-    n_heads=12,
-    mlp_ratio=4,
-    qkv_bias=True,
-    p=0,
-    attn_p=0.,
-    """
-
-
-
+"""
+Download ImageNet and train
+ImageNet Dataset Download : https://image-net.org/challenges/LSVRC/2012/2012-downloads.php
+ImageNet Dataset Download : https://image-net.org/download-images
+PyTorch ImageNet usage : https://pytorch.org/vision/main/generated/torchvision.datasets.ImageNet.html
+create config.py"""
