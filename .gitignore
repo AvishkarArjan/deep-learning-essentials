@@ -7,6 +7,12 @@ vision_transformer/.vscode
 vision_transformer/__pycache__
 vision_transformer/model_checkpoints
 
+vision_transformer/vit_cifar10_mark2.ipynb
+vision_transformer/vitcifar10.py
+vision_transformer/vit_cifar_checkpoints
+vision_transformer/vit_scratch.ipynb
+
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -180,3 +186,4 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+

@@ -1,8 +1,8 @@
 """MODEL
 
 checkout : https://github.com/nerminnuraydogan/vision-transformer/blob/main/vision-transformer.ipynb
-
-Pytorch Paper replication : https://www.learnpytorch.io/08_pytorch_paper_replicating/"""
+Pytorch Paper replication : https://www.learnpytorch.io/08_pytorch_paper_replicating/
+Also : https://tintn.github.io/Implementing-Vision-Transformer-from-Scratch/"""
 
 
 import torch
