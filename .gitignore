@@ -12,7 +12,6 @@ vision_transformer/vitcifar10.py
 vision_transformer/vit_cifar_checkpoints
 vision_transformer/vit_scratch.ipynb
 vision_transformer/train_model.ipynb
-vision_transformer/results
 
 
 ### Python ###
