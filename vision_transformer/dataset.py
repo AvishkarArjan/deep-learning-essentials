@@ -8,7 +8,6 @@ Caltech256 Dataset : https://pytorch.org/vision/stable/generated/torchvision.dat
 import torch
 from torchvision import datasets
 from torchvision.transforms import transforms
-from sklearn.model_selection import train_test_split
 
 from config import *
 
