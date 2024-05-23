@@ -7,7 +7,6 @@ vision_transformer/.vscode
 vision_transformer/__pycache__
 vision_transformer/model_checkpoints
 
-vision_transformer/vit_cifar10_mark2.ipynb
 vision_transformer/vitcifar10.py
 vision_transformer/vit_cifar_checkpoints
 vision_transformer/vit_scratch.ipynb
