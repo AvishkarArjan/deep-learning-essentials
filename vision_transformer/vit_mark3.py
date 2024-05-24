@@ -76,9 +76,12 @@ class Encoder(nn.Module):
         self.pos_embedding = nn.Parameter(torch.empty(1, seq_length, config["embed_dim"]).normal_(std=0.02))  # from BERT
         self.dropout = nn.Dropout(config["dropout"])
         self.embed_dim =  config["embed_dim"]
-        self.layers = nn.ModuleList([
-			EncoderBlock(config) for _ in range(config["num_layers"])]
-			)
+        layers = OrderedDict()
+        for i in range(num_layers):
+            layers[f"encoder_layer_{i}"] = EncoderBlock(
+                config
+            )
+        self.layers = nn.Sequential(layers)
         self.layer_norm = nn.LayerNorm(self.embed_dim)
     
     def forward(self, x):
@@ -93,13 +96,14 @@ class VisionTransformer(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.conv_proj = nn.Conv2d(
-			config["num_channels"], 
-		    config["embed_dim"],
+			in_channels=config["num_channels"], 
+		    out_channels=config["embed_dim"],
 			kernel_size=config["patch_size"],
-			stride=config["patch_size"])
+			stride=config["patch_size"]
+            )
         self.patch_size = config["patch_size"]
         self.img_size = config["img_size"]
-        seq_length = (config["img_size"] // config["patch_size"]) ** 2
+        seq_length = (self.img_size // self.patch_size) ** 2
         self.class_token = nn.Parameter(torch.zeros(1, 1, config["embed_dim"]))
         seq_length += 1
 
