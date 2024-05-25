@@ -2,6 +2,7 @@
 CNN 101 on MNIST : [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/AvishkarArjan/deep-learning-essentials/blob/master/cnn_101.ipynb)
 
 Vision Transformer on MNIST: [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://githubtocolab.com/AvishkarArjan/deep-learning-essentials/blob/master/vision_transformer/vit_mnist.ipynb)
+
 *VIT MNIST - Train & Test => Loss and Accuracy 10 epochs.*
 ![](./vision_transformer/results/vit_mnist.png)
 
