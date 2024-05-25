@@ -8,6 +8,7 @@ vision_transformer/__pycache__
 vision_transformer/model_checkpoints
 
 vision_transformer/vitcifar10.py
+vision_transformer/vit_mnist_official.ipynb
 vision_transformer/vit_cifar_checkpoints
 vision_transformer/vit_scratch.ipynb
 vision_transformer/train_model.ipynb

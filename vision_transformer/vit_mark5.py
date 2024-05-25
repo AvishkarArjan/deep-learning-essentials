@@ -12,6 +12,7 @@ class PatchEmbeddings(nn.Module):
         self.patch_size = config["patch_size"]
         self.num_patches = (self.img_size // self.patch_size) **2
         self.num_channels = config["num_channels"]
+        
         self.patcher = nn.Sequential(
             nn.Conv2d(
                 in_channels=self.num_channels,
@@ -77,8 +78,9 @@ if __name__ == "__main__":
     
     config ={
         "img_size":28,
-        "embed_dim":768,
-        "patch_size":6,
+        "embed_dim":16, # (PATCH_SIZE**2)*NUM_CHANNELS
+        "patch_size":4,
+        "num_patches":49 , # (IMG_SIZE// PATCH_SIZE)**2
         "dropout":0.01,
         "num_channels":1,
         "num_heads":4,
