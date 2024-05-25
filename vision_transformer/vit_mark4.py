@@ -40,9 +40,10 @@ class VisionTransformer(nn.Module):
     
     def forward(self, x):
         x = x.reshape(-1, 3, 32, 32)
-        x = F.relu(self.position_embedder(self.position_encoder(x)))
+        x = F.relu(self.position_embedder(self.position_encoder(x))) 
+        # x.shape = (torch.Size([32, 512])) = > occasionally 16, 512
         x = x.reshape(-1, self.seq_len, self.d_model).permute(1, 0 ,2)
-        
+        # x.shape = 1,32,512 ==> 32,1,512
         attn_mask = self.generate_square_subsequent_mask(x.shape[0]).cuda()
         fused_embedding = F.relu(self.transformer_encoder(x, mask=attn_mask))
         
